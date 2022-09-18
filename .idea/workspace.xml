@@ -21,11 +21,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d32806b6-f81c-4437-af22-b880a80d5e93" name="Changes" comment="format funcionando karai">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/operations.h" afterDir="false" />
+    <list default="true" id="d32806b6-f81c-4437-af22-b880a80d5e93" name="Changes" comment="format funcionando finalmente o push definitivo">
+      <change beforePath="$PROJECT_DIR$/.idea/WFKIT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WFKIT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcda" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcno" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/WFKIT.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/WFKIT.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +97,11 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WFKIT" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WFKIT" TARGET_NAME="WFKIT" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="WFKIT" RUN_TARGET_NAME="WFKIT">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -119,7 +130,7 @@
       <workItem from="1663421973794" duration="474000" />
       <workItem from="1663434869611" duration="25290000" />
       <workItem from="1663483658544" duration="1466000" />
-      <workItem from="1663486251119" duration="2000" />
+      <workItem from="1663486251119" duration="2686000" />
     </task>
     <task id="LOCAL-00001" summary="o inicio">
       <created>1663451353488</created>
@@ -177,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663484744729</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="format funcionando finalmente o push definitivo">
+      <created>1663486328024</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663486328024</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +219,8 @@
     <MESSAGE value="o inicio" />
     <MESSAGE value="format funcionando!!!!" />
     <MESSAGE value="format funcionando karai" />
-    <option name="LAST_COMMIT_MESSAGE" value="format funcionando karai" />
+    <MESSAGE value="format funcionando finalmente o push definitivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="format funcionando finalmente o push definitivo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
