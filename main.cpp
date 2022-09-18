@@ -142,7 +142,7 @@ int main(int argc, char** argv) {
     v.push_back({"N", "0123456789", "m", includeAny});
     v.push_back({"L", "abc", "m", includeOnly});
 
-    cout << "g: " << format(R"(-2345.af)", R"([-]N[(.NL)][f])", v).suc << ";\n";
+    cout << "g: " << format(R"(-2345.0af)", R"([-]N[(.NL)][f])", v).suc << ";\n";
 
     return 0;
 }
