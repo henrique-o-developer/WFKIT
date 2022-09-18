@@ -21,18 +21,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d32806b6-f81c-4437-af22-b880a80d5e93" name="Changes" comment="format funcionando finalmente o push definitivo">
-      <change beforePath="$PROJECT_DIR$/.idea/WFKIT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WFKIT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/WFKIT.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/WFKIT.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/WFKIT.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="d32806b6-f81c-4437-af22-b880a80d5e93" name="Changes" comment="format 100% eu acho" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +119,7 @@
       <workItem from="1663421973794" duration="474000" />
       <workItem from="1663434869611" duration="25290000" />
       <workItem from="1663483658544" duration="1466000" />
-      <workItem from="1663486251119" duration="2686000" />
+      <workItem from="1663486251119" duration="3616000" />
     </task>
     <task id="LOCAL-00001" summary="o inicio">
       <created>1663451353488</created>
@@ -195,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663486328024</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="format 100% eu acho">
+      <created>1663517298657</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663517298657</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +216,8 @@
     <MESSAGE value="format funcionando!!!!" />
     <MESSAGE value="format funcionando karai" />
     <MESSAGE value="format funcionando finalmente o push definitivo" />
-    <option name="LAST_COMMIT_MESSAGE" value="format funcionando finalmente o push definitivo" />
+    <MESSAGE value="format 100% eu acho" />
+    <option name="LAST_COMMIT_MESSAGE" value="format 100% eu acho" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
