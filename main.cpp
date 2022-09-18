@@ -38,6 +38,15 @@ generic format(string s, string f, vector<type> v) {
         string m = cts(s[i]);
         type b;
 
+        if (s[i-1] == '\\') {
+            s = s.substr(0, i-1) + s.substr(i, s.length());
+            cout << "s: " + s + ";\n";
+            m = R"(\)" + m;
+            i--;
+
+            cout << "i: " << i << ";\n";
+        }
+
         for (int i2 = k; i2 < f.length(); ++i2) {
             string c = cts(f[i2]);
 
@@ -60,14 +69,16 @@ generic format(string s, string f, vector<type> v) {
         cout << "b: " << b.value << ", " << b.name << ", " << b.compare(m, b.value) << ", " << m << ";\n";
 
         if (b.compare(m, b.value)) {
-            if (!mult) ret.res += m;
+            if (!mult) ret.res += cts(s[i]);
             else {
                 cout << "S\n";
-                mulul += m;
+                mulul += cts(s[i]);
                 mfa = false;
             }
 
             any = true;
+
+            if (b.type == "s" && !mult) k++;
         } else {
             if (!any && need) {
                 ret.suc = false;
@@ -82,8 +93,6 @@ generic format(string s, string f, vector<type> v) {
             i--;
             any = false;
         }
-
-        //if (b.type == "s") k++;
     }
 
     if (mult && f[k+1] != ')') ret.suc = false;
@@ -107,6 +116,12 @@ generic format(string s, string f, vector<type> v) {
 
 string parsemain(string code, vector<variable> all) {
 
+}
+
+bool compareString(string me, string value) {
+    if (me == "\"") return false;
+
+    return true;
 }
 
 int main(int argc, char** argv) {
@@ -140,9 +155,10 @@ int main(int argc, char** argv) {
     vector<type> v;
 
     v.push_back({"N", "0123456789", "m", includeAny});
-    v.push_back({"L", "abc", "m", includeOnly});
+    v.push_back({"L", "", "m", compareString});
 
-    cout << "g: " << format(R"(-2345.0af)", R"([-]N[(.NL)][f])", v).suc << ";\n";
+    //cout << "g: " << format(R"(-12345f)", R"([-]N[(.N)][f])", v).suc << ";\n";
+    cout << "g: " << format(R"("aab\"")", R"("L")", v).suc << ";\n";
 
     return 0;
 }
