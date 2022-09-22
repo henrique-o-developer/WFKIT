@@ -8,7 +8,6 @@ void formatHelp(string& c, bool& mult, bool& mf, bool& mfa, bool& need, string& 
     if (c == ")") {
         if (mf) {
             if (!mfa) {
-                cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n";
                 suc = false;
             }
         }
@@ -40,11 +39,8 @@ generic format(string s, string f, vector<type> v) {
 
         if (s[i-1] == '\\') {
             s = s.substr(0, i-1) + s.substr(i, s.length());
-            cout << "s: " + s + ";\n";
             m = R"(\)" + m;
             i--;
-
-            cout << "i: " << i << ";\n";
         }
 
         for (int i2 = k; i2 < f.length(); ++i2) {
@@ -66,13 +62,12 @@ generic format(string s, string f, vector<type> v) {
             break;
         }
 
-        cout << "b: " << b.value << ", " << b.name << ", " << b.compare(m, b.value) << ", " << m << ";\n";
+        if (m == "\\" && s[i-1] != '\\') continue;
 
         if (b.compare(m, b.value)) {
-            if (!mult) ret.res += cts(s[i]);
+            if (!mult) ret.res += m;
             else {
-                cout << "S\n";
-                mulul += cts(s[i]);
+                mulul += m;
                 mfa = false;
             }
 
@@ -80,12 +75,12 @@ generic format(string s, string f, vector<type> v) {
 
             if (b.type == "s" && !mult) k++;
         } else {
+            cout << "not: " << m << ";\n";
             if (!any && need) {
                 ret.suc = false;
             }
 
             if (mult && !any) {
-                cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: " << b.name << "\n;";
                 mf = true;
             }
 
@@ -97,14 +92,11 @@ generic format(string s, string f, vector<type> v) {
 
     if (mult && f[k+1] != ')') ret.suc = false;
 
-    cout << "res: " << ret.res << ";\n";
-
     for (int i2 = k+1; i2 < f.length(); ++i2) {
         string c = cts(f[i2]);
 
         formatHelp(c, mult, mf, mfa, need, mulul, ret.res, ret.suc);
 
-        cout << "need: " << need << ", i: " << i2 << ", c: " << c << ";\n";
         if (need && c != "]") {
             ret.suc = false;
             break;
@@ -114,25 +106,54 @@ generic format(string s, string f, vector<type> v) {
     return ret;
 }
 
-string parsemain(string code, vector<variable> all) {
-
+bool compML(Op a, Op b) {
+    return a.op.length() > b.op.length();
 }
 
-bool compareString(string me, string value) {
-    if (me == "\"") return false;
+bool compMP(Op a, Op b) {
+    return a.pri > b.pri;
+}
+
+Operation getNext(vector<variable> all, vector<Op> ops) {
+    Operation op;
+
+    sort(ops.begin(), ops.end(), compMP);
+    sort(ops.begin(), ops.end(), compML);
+
+    for (const auto &item: ops) {
+        bool pickuped = false;
+
+
+    }
+}
+
+string parsemain(vector<variable> all) {
+    vector<Op> ops = getBaseOperations();
+    //        Aditional ad = {code, all, ops, };
+}
+
+bool compareNot(string me, string value) {
+    if (me == value) return false;
 
     return true;
 }
 
 int main(int argc, char** argv) {
-    bool runDef = false;
+    bool runDef = true;
+
+    vector<type> v;
+
+    v.push_back({"N", "0123456789 ", "m", includeAny});
+    v.push_back({"F", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", "m", includeAny});
+    v.push_back({"S", "\"", "m", compareNot});
+    v.push_back({"L", "\'", "s", compareNot});
 
     if (runDef) {
         if (argc >= 2) {
             ifstream ifs(argv[1]);
             string content((istreambuf_iterator<char>(ifs)), (istreambuf_iterator<char>()));
 
-            parsemain(content, {});
+            parsemain({});
         } else {
             vector<variable> vars;
 
@@ -143,22 +164,48 @@ int main(int argc, char** argv) {
 
                 getline(cin, cmd);
 
-                if (cmd == "->stop") break;
+                cout << "\n";
 
-                //wfkit wkit = parsemain(cmd, vars);
+                if (cmd == "->stop") break;
+                if (cmd == "->help") {
+                    cout << "query strings:\n[]: pode ou nao usar\n(): se usar um usa todos\n";
+                    cout << "lista de comandos: \n";
+
+                    for (const auto &item: getBaseOperations()) {
+                        string a = "{";
+                        string b = "{";
+
+                        for (const auto &item: item.a) a += item + "|";
+                        for (const auto &item: item.b) b += item + "|";
+
+                        a = a.substr(0, a.length()-1);
+                        b = b.substr(0, b.length()-1);
+
+                        a += "}";
+                        b += "}";
+
+                        cout << "comando: " << item.op << ", uso: " << a << "[S](" << item.op << ")[S]" << b << ";\n";
+                    }
+
+                    continue;
+                }
+
+                //wfkit wkit = parsemain(vars);
 
                 //vars = wkit.all;
             }
         }
     }
 
-    vector<type> v;
+    /*vector<type> v;
 
     v.push_back({"N", "0123456789", "m", includeAny});
-    v.push_back({"L", "", "m", compareString});
+    v.push_back({"L", "'", "s", compareString});
 
     //cout << "g: " << format(R"(-12345f)", R"([-]N[(.N)][f])", v).suc << ";\n";
-    cout << "g: " << format(R"("aab\"")", R"("L")", v).suc << ";\n";
+    */
+
+    cout << "g: " << format(R"('l')", R"('[L]')", v).suc << ";\n";
 
     return 0;
 }

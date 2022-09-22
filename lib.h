@@ -6,13 +6,21 @@
 #include <vector>
 #include <bits/stdc++.h>
 
-
 using namespace std;
+
+const string
+    numberQ = R"([-]N[(.N)][f])",
+    stringQ = R"("S")",
+    charQ = R"('L')",
+    variableQ = R"(:F:)"
+;
 
 struct Run;
 struct Aditional;
 struct StringAndInt;
 struct variable;
+struct generic;
+
 struct pendent {
     int value;
     string type;
@@ -21,29 +29,25 @@ struct pendent {
 };
 
 struct Op {
-    Run (*r)(const vector<StringAndInt> &a, const vector<StringAndInt> &b, const Aditional &ad);
+    Run (*r)(const generic a, const generic b, const Aditional &ad);
     int pri;
     string op;
+    vector<string> a;
+    vector<string> b;
 };
 
 struct Run {
-    string res;
     bool useA = true;
     bool useB = true;
     int aLe = -1;
     int bLe = -1;
     string ret;
-    vector<Op*> keys;
-    vector<variable> scope;
-    vector<variable> global;
-    vector<pendent> pendent;
 };
 
 struct Aditional {
-    string s;
-    vector<variable> variables;
-    vector<variable> scope;
-    vector<pendent> pendent;
+    string& code;
+    vector<variable>& all;
+    vector<Op>& ops;
     int max;
     int min;
 };
